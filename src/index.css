@@ -1,0 +1,176 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans antialiased overflow-x-hidden;
+    background-color: theme('colors.brand.dark');
+    background-image:
+      radial-gradient(circle at 10% 10%, rgba(139, 92, 246, 0.06) 0%, transparent 40%),
+      radial-gradient(circle at 90% 90%, rgba(99, 102, 241, 0.04) 0%, transparent 40%),
+      linear-gradient(to bottom, #111827, #161e2e, #1f2937);
+    color: theme('colors.brand.gray');
+    min-height: 100vh;
+    background-attachment: fixed;
+  }
+
+  ::selection {
+    background-color: theme('colors.brand.primary');
+    color: white;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold tracking-tight;
+    color: theme('colors.brand.light');
+    font-family: theme('fontFamily.heading');
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #141414;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+@layer utilities {
+  .animate-fadeIn {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Shimmer skeleton animation */
+  .animate-shimmer {
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.03) 25%,
+      rgba(255, 255, 255, 0.08) 50%,
+      rgba(255, 255, 255, 0.03) 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite linear;
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  /* Floating orbital mesh background */
+  .bg-mesh-orbit-1 {
+    animation: orbit1 25s infinite alternate ease-in-out;
+  }
+
+  .bg-mesh-orbit-2 {
+    animation: orbit2 30s infinite alternate ease-in-out;
+  }
+
+  @keyframes orbit1 {
+    0% {
+      transform: translate(0, 0) scale(1);
+    }
+    100% {
+      transform: translate(150px, -100px) scale(1.3);
+    }
+  }
+
+  @keyframes orbit2 {
+    0% {
+      transform: translate(0, 0) scale(1.2);
+    }
+    100% {
+      transform: translate(-100px, 150px) scale(0.8);
+    }
+  }
+
+  /* 3D tilt custom transition */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  
+  .transform-style-3d {
+    transform-style: preserve-3d;
+  }
+
+  /* Card custom light sweep */
+  .hover-glare {
+    position: relative;
+  }
+
+  .hover-glare::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+      45deg,
+      transparent 45%,
+      rgba(255, 255, 255, 0.1) 50%,
+      transparent 55%
+    );
+    transform: rotate(-45deg) translateY(-100%);
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+  }
+
+  .group:hover .hover-glare::after {
+    transform: rotate(-45deg) translateY(100%);
+  }
+
+  /* Hide scrollbars for categories row but keep functionality */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+}
+
+/* Custom scrollbar adjustments for the dark purple theme */
+::-webkit-scrollbar-thumb {
+  background: #8B5CF6;
+  border-radius: 4px;
+  border: 2px solid #111827;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6366F1;
+}
+
+::-webkit-scrollbar-track {
+  background: #111827;
+}
