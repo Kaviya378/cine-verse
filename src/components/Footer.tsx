@@ -1,5 +1,6 @@
 import React from "react";
 import { Film, ArrowRight } from "lucide-react";
+import FadeIn from './Anim';
 
 const Footer: React.FC = () => {
   const scrollToRecommendations = () => {
@@ -19,41 +20,47 @@ const Footer: React.FC = () => {
 
       <div className="relative container mx-auto max-w-5xl px-6 py-24 z-10">
         {/* Logo */}
-        <div className="flex justify-center items-center gap-3">
-          <Film
-            size={34}
-            className="text-brand-primary shadow-cinema"
-          />
-          <h2 className="text-4xl font-black tracking-tight text-white uppercase font-heading">
-            CINE<span className="text-brand-primary">VERSE</span>
-          </h2>
-        </div>
+        <FadeIn>
+          <div className="flex justify-center items-center gap-3">
+            <Film
+              size={34}
+              className="text-brand-primary shadow-cinema"
+            />
+            <h2 className="text-4xl font-black tracking-tight text-white uppercase font-heading">
+              CINE<span className="text-brand-primary">VERSE</span>
+            </h2>
+          </div>
+        </FadeIn>
 
         {/* Description */}
-        <div className="mt-8 text-center max-w-2xl mx-auto">
-          <p className="text-lg text-white">
-            Discover the best movies with AI-powered recommendations.
-          </p>
-          <p className="mt-2 text-brand-muted">
-            Find classics, blockbusters, hidden gems, and timeless cinema.
-          </p>
-        </div>
+        <FadeIn delay={0.1}>
+          <div className="mt-8 text-center max-w-2xl mx-auto">
+            <p className="text-lg text-white">
+              Discover the best movies with AI-powered recommendations.
+            </p>
+            <p className="mt-2 text-brand-muted">
+              Find classics, blockbusters, hidden gems, and timeless cinema.
+            </p>
+          </div>
+        </FadeIn>
 
         {/* CTA */}
-        <div className="mt-16">
-          <div className="rounded-[2rem] border border-white/[0.05] bg-white/[0.02] backdrop-blur-xl p-10 text-center shadow-[0_20px_50px_rgba(229,9,20,0.05)]">
-            <h3 className="text-3xl font-black text-white">
-              🎬 Ready to Discover Your Next Favorite Movie?
-            </h3>
-            <button
-              onClick={scrollToRecommendations}
-              className="mt-8 inline-flex items-center gap-2 rounded-full bg-ai-gradient px-8 py-4 font-black uppercase tracking-wider text-white transition duration-300 hover:scale-105 hover:shadow-[0_0_35px_rgba(229,9,20,0.55)] shadow-cinema"
-            >
-              Discover Movies
-              <ArrowRight size={18} />
-            </button>
+        <FadeIn delay={0.2}>
+          <div className="mt-16">
+            <div className="rounded-[2rem] border border-white/[0.05] bg-white/[0.02] backdrop-blur-xl p-10 text-center shadow-[0_20px_50px_rgba(229,9,20,0.05)]">
+              <h3 className="text-3xl font-black text-white">
+                🎬 Ready to Discover Your Next Favorite Movie?
+              </h3>
+              <button
+                onClick={scrollToRecommendations}
+                className="mt-8 inline-flex items-center gap-2 rounded-full bg-ai-gradient px-8 py-4 font-black uppercase tracking-wider text-white transition duration-300 hover:scale-105 hover:shadow-[0_0_35px_rgba(229,9,20,0.55)] shadow-cinema"
+              >
+                Discover Movies
+                <ArrowRight size={18} />
+              </button>
+            </div>
           </div>
-        </div>
+        </FadeIn>
 
         {/* Quote */}
         <div className="mt-20 text-center max-w-2xl mx-auto">

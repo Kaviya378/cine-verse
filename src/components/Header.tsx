@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Film } from 'lucide-react';
+import FadeIn from './Anim';
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -37,7 +38,8 @@ const Header: React.FC = () => {
           : 'bg-white/[0.03] backdrop-blur-md border-white/[0.05] py-4 px-6 md:px-10'
       }`}
     >
-      <div className="flex justify-between items-center w-full">
+      <FadeIn>
+        <div className="flex justify-between items-center w-full">
         {/* Logo */}
         <div 
           className="flex items-center space-x-3 group cursor-pointer" 
@@ -77,7 +79,8 @@ const Header: React.FC = () => {
             })}
           </ul>
         </nav>
-      </div>
+        </div>
+      </FadeIn>
     </header>
   );
 };

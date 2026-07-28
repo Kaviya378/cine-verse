@@ -2,6 +2,7 @@ import React from 'react';
 import { Movie, RecommendationReason } from '../types';
 import MovieCard from './MovieCard';
 import { Film } from 'lucide-react';
+import { Stagger, FadeIn } from './Anim';
 
 interface MovieListProps {
   recommendations: [Movie, RecommendationReason][];
@@ -26,22 +27,26 @@ const MovieList: React.FC<MovieListProps> = ({ recommendations, onSelectMovie })
   }
 
   return (
-    <div className="mt-24 animate-fade-in">
+    <div className="mt-24">
       <div className="flex flex-col items-center justify-center mb-20 space-y-6">
-        <h2 className="text-sm font-black text-brand-primary text-center tracking-[0.6em] uppercase">CURATED SELECTIONS</h2>
-        <div className="h-0.5 w-32 bg-gradient-to-r from-transparent via-brand-primary to-transparent opacity-50 shadow-[0_0_15px_#6366F1]"></div>
+        <FadeIn>
+          <h2 className="text-sm font-black text-brand-primary text-center tracking-[0.6em] uppercase">CURATED SELECTIONS</h2>
+          <div className="h-0.5 w-32 bg-gradient-to-r from-transparent via-brand-primary to-transparent opacity-50 shadow-[0_0_15px_#6366F1]"></div>
+        </FadeIn>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {recommendations.map(([movie, reason], index) => (
-          <MovieCard
-            key={movie.id}
-            {...movie}
-            reason={reason}
-            delay={index * 150} // Staggered animation
-            onClick={onSelectMovie ? () => onSelectMovie(movie) : undefined}
-          />
-        ))}
-      </div>
+      <Stagger>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {recommendations.map(([movie, reason], index) => (
+            <MovieCard
+              key={movie.id}
+              {...movie}
+              reason={reason}
+              delay={index * 150} // Staggered animation handled in MovieCard fade
+              onClick={onSelectMovie ? () => onSelectMovie(movie) : undefined}
+            />
+          ))}
+        </div>
+      </Stagger>
     </div>
   );
 };

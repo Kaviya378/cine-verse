@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { RecommendationReason } from '../types';
 import { Star, Clock, Check } from 'lucide-react';
+import FadeIn from './Anim';
 
 interface MovieCardProps {
   id: string;
@@ -29,16 +30,7 @@ const MovieCard: React.FC<MovieCardProps> = ({
   delay,
   onClick
 }) => {
-  const [isVisible, setIsVisible] = useState(false);
   const [tiltStyle, setTiltStyle] = useState<React.CSSProperties>({});
-
-  React.useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsVisible(true);
-    }, delay);
-
-    return () => clearTimeout(timer);
-  }, [delay]);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const card = e.currentTarget;
@@ -72,12 +64,7 @@ const MovieCard: React.FC<MovieCardProps> = ({
   };
 
   return (
-    <div
-      className={`transform transition-all duration-700 ease-out h-full ${isVisible
-        ? 'translate-y-0 opacity-100'
-        : 'translate-y-10 opacity-0'
-        }`}
-    >
+    <FadeIn delay={delay / 1000} className="h-full">
       <div
         className="group relative bg-white/[0.02] backdrop-blur-md cursor-pointer hover:shadow-[0_15px_40px_rgba(229,9,20,0.25)] border border-white/[0.05] hover:border-brand-primary/45 h-full flex flex-col rounded-[1.8rem] overflow-hidden transform-style-3d hover-glare transition-all duration-300"
         style={tiltStyle}
@@ -154,7 +141,7 @@ const MovieCard: React.FC<MovieCardProps> = ({
           )}
         </div>
       </div>
-    </div>
+      </FadeIn>
   );
 };
 
