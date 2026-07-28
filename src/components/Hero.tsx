@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronsDown, Play } from 'lucide-react';
+import { Play } from 'lucide-react';
 
 const Hero: React.FC = () => {
   const [imgLoaded, setImgLoaded] = useState(false);
@@ -104,15 +104,6 @@ const Hero: React.FC = () => {
         </div>
       </div>
 
-      {/* Down Scroll Indicator */}
-      <div className="absolute bottom-12 left-0 right-0 flex justify-center z-30">
-        <button 
-          onClick={scrollToPreferences} 
-          className="text-brand-muted hover:text-white transition-all duration-300 p-4 rounded-full bg-white/5 backdrop-blur-md border border-white/10 hover:border-brand-primary/50 group"
-        >
-          <ChevronsDown size={28} className="animate-bounce" />
-        </button>
-      </div>
     </div>
   );
 };
