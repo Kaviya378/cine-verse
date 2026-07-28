@@ -33,8 +33,8 @@ const Header: React.FC = () => {
     <header
       className={`fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl z-50 transition-all duration-500 rounded-full border ${
         isScrolled
-          ? 'bg-black/85 backdrop-blur-2xl border-brand-primary/20 shadow-[0_15px_40px_rgba(139,92,246,0.15)] py-3 px-6 md:px-10'
-          : 'bg-black/30 backdrop-blur-md border-white/5 py-4 px-6 md:px-10'
+          ? 'bg-brand-dark/85 backdrop-blur-2xl border-brand-primary/20 shadow-[0_15px_40px_rgba(229,9,20,0.15)] py-3 px-6 md:px-10'
+          : 'bg-white/[0.03] backdrop-blur-md border-white/[0.05] py-4 px-6 md:px-10'
       }`}
     >
       <div className="flex justify-between items-center w-full">
@@ -70,7 +70,7 @@ const Header: React.FC = () => {
                   </button>
                   {/* Sliding active pill indicator */}
                   {isActive && (
-                    <span className="absolute inset-0 bg-brand-primary/10 rounded-full border border-brand-primary/20 shadow-[0_0_15px_rgba(139,92,246,0.2)] animate-fadeIn"></span>
+                    <span className="absolute inset-0 bg-brand-primary/15 rounded-full border border-brand-primary/30 shadow-[0_0_15px_rgba(229,9,20,0.25)] animate-fadeIn"></span>
                   )}
                 </li>
               );

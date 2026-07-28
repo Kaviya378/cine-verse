@@ -85,11 +85,11 @@ const PreferenceForm: React.FC<PreferenceFormProps> = ({ onSubmit }) => {
 
   const CheckboxItem = ({ label, checked, onChange }: { label: string, checked: boolean, onChange: () => void }) => (
     <label className={`group cursor-pointer relative flex items-center p-4 rounded-2xl border transition-all duration-500 overflow-hidden ${checked
-      ? 'bg-brand-primary/20 border-brand-primary shadow-[0_0_20px_rgba(139,92,246,0.3)]'
-      : 'bg-white/5 border-white/10 hover:border-brand-primary/50 hover:bg-white/10'
+      ? 'bg-brand-secondary/10 border-brand-primary/45 shadow-[0_0_20px_rgba(229,9,20,0.25)]'
+      : 'bg-white/5 border-white/10 hover:border-brand-primary/30 hover:bg-white/10'
       }`}>
       <div className={`relative z-10 w-5 h-5 rounded-full flex items-center justify-center mr-4 transition-all duration-500 ${checked
-        ? 'bg-brand-primary text-white scale-110 shadow-lg'
+        ? 'bg-brand-primary text-white scale-110 shadow-[0_0_10px_rgba(229,9,20,0.55)]'
         : 'bg-white/10 text-transparent border border-white/20'
         }`}>
         <Check size={12} strokeWidth={4} />
@@ -113,10 +113,10 @@ const PreferenceForm: React.FC<PreferenceFormProps> = ({ onSubmit }) => {
   ];
 
   return (
-    <div id="preferences" className="bg-brand-surface backdrop-blur-3xl rounded-[2.5rem] shadow-[0_40px_100px_rgba(15,23,42,0.3)] p-10 md:p-16 max-w-6xl mx-auto -mt-32 relative z-20 border border-white/5 overflow-hidden">
+    <div id="preferences" className="bg-white/[0.02] backdrop-blur-2xl rounded-[2.5rem] shadow-[0_40px_100px_rgba(15,23,42,0.3)] p-10 md:p-16 max-w-6xl mx-auto -mt-32 relative z-20 border border-white/[0.05] overflow-hidden">
       <div className="text-center mb-16 space-y-4">
         <h2 className="text-4xl md:text-6xl font-black font-heading text-white tracking-tighter uppercase">PREFERENCES</h2>
-        <div className="h-1 w-24 bg-brand-primary mx-auto rounded-full shadow-cinema"></div>
+        <div className="h-1 w-24 bg-ai-gradient mx-auto rounded-full shadow-cinema animate-pulse"></div>
       </div>
 
       {/* Navigation tabs */}
@@ -125,7 +125,7 @@ const PreferenceForm: React.FC<PreferenceFormProps> = ({ onSubmit }) => {
           <button
             key={tab.id}
             className={`flex items-center px-10 py-5 rounded-full font-black text-[10px] tracking-[0.3em] transition-all duration-500 ${activeTab === tab.id
-              ? 'bg-brand-primary text-white shadow-cinema scale-105'
+              ? 'bg-ai-gradient text-white shadow-cinema scale-105'
               : 'bg-white/5 text-brand-muted border border-white/5 hover:border-white/20 hover:text-white'
               }`}
             onClick={() => setActiveTab(tab.id)}
@@ -206,7 +206,7 @@ const PreferenceForm: React.FC<PreferenceFormProps> = ({ onSubmit }) => {
                 </div>
               </div>
 
-              <div className="bg-white/5 p-10 rounded-3xl border border-white/10 shadow-2xl">
+              <div className="bg-white/[0.02] backdrop-blur-md p-10 rounded-3xl border border-white/[0.05] shadow-2xl">
                 <h3 className="text-xs font-black text-brand-gray uppercase tracking-[0.4em] mb-12 flex items-center">
                   YEAR RANGE
                 </h3>
@@ -248,7 +248,7 @@ const PreferenceForm: React.FC<PreferenceFormProps> = ({ onSubmit }) => {
         <div className="mt-20 pt-16 border-t border-white/5 flex justify-center">
           <button
             type="submit"
-            className="group relative px-16 py-6 bg-brand-primary text-white font-black text-sm uppercase tracking-[0.3em] rounded-full shadow-cinema hover:shadow-[0_0_80px_rgba(139,92,246,0.5)] transition-all duration-500 hover:-translate-y-2 overflow-hidden"
+            className="group relative px-16 py-6 bg-ai-gradient text-white font-black text-sm uppercase tracking-[0.3em] rounded-full shadow-cinema hover:shadow-[0_0_80px_rgba(229,9,20,0.6)] transition-all duration-500 hover:-translate-y-2 overflow-hidden"
           >
             <span className="relative z-10 flex items-center">
               GENERATE RESULTS

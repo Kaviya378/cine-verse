@@ -42,16 +42,16 @@ const MovieModal: React.FC<MovieModalProps> = ({ movie, onClose }) => {
     <div className={`fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8 transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0'}`}>
       {/* Ambient Blur Backdrop */}
       <div 
-        className="absolute inset-0 bg-black/80 backdrop-blur-xl"
+        className="absolute inset-0 bg-[#000000]/85 backdrop-blur-2xl"
         onClick={handleClose}
       ></div>
 
       {/* Futuristic Spotlight Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-primary/10 blur-[150px] rounded-full pointer-events-none z-10"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-primary/20 blur-[150px] rounded-full pointer-events-none z-10"></div>
 
       {/* Modal Dialog Body */}
       <div 
-        className={`relative bg-brand-surface w-full max-w-5xl rounded-[2.5rem] shadow-[0_30px_100px_rgba(0,0,0,0.8)] border border-white/10 overflow-hidden z-20 max-h-[90vh] overflow-y-auto no-scrollbar transition-all duration-500 transform ${
+        className={`relative bg-[#141414]/95 backdrop-blur-3xl w-full max-w-5xl rounded-[2.5rem] shadow-[0_30px_100px_rgba(0,0,0,0.8)] border border-white/[0.08] overflow-hidden z-20 max-h-[90vh] overflow-y-auto no-scrollbar transition-all duration-500 transform ${
           isOpen ? 'scale-100 translate-y-0' : 'scale-90 translate-y-8'
         }`}
       >
@@ -71,8 +71,8 @@ const MovieModal: React.FC<MovieModalProps> = ({ movie, onClose }) => {
               alt={movie.title}
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-brand-surface via-transparent to-transparent opacity-100"></div>
-            <div className="absolute inset-0 bg-gradient-to-t from-brand-surface via-brand-surface/20 to-transparent opacity-90 md:hidden"></div>
+            <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-[#141414] via-transparent to-transparent opacity-100"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-[#141414] via-[#141414]/20 to-transparent opacity-90 md:hidden"></div>
           </div>
 
           {/* Right Column: Details */}
@@ -85,15 +85,15 @@ const MovieModal: React.FC<MovieModalProps> = ({ movie, onClose }) => {
               
               <div className="flex flex-wrap items-center gap-4 text-[10px] font-black uppercase tracking-[0.25em] text-brand-muted">
                 <span className="flex items-center text-white bg-brand-primary/20 border border-brand-primary/30 px-3 py-1.5 rounded-full">
-                  <Star size={12} className="fill-brand-primary text-brand-primary mr-2" />
+                  <Star size={12} className="fill-brand-accent text-brand-accent mr-2" />
                   {movie.rating.toFixed(1)} / 10
                 </span>
                 <span className="flex items-center">
-                  <Clock size={12} className="text-brand-primary mr-2" />
+                  <Clock size={12} className="text-brand-accent mr-2" />
                   {formatRuntime(movie.runtime)}
                 </span>
                 <span className="flex items-center">
-                  <Calendar size={12} className="text-brand-primary mr-2" />
+                  <Calendar size={12} className="text-brand-accent mr-2" />
                   {movie.year}
                 </span>
                 <span className="text-white px-3 py-1 bg-white/5 border border-white/10 rounded-md">
@@ -138,7 +138,7 @@ const MovieModal: React.FC<MovieModalProps> = ({ movie, onClose }) => {
                 {movie.themes.map(theme => (
                   <span
                     key={theme}
-                    className="px-4 py-2 bg-brand-primary/10 text-brand-accent text-[9px] font-black uppercase tracking-widest rounded-lg border border-brand-primary/10"
+                    className="px-4 py-2 bg-brand-accent/10 text-brand-accent text-[9px] font-black uppercase tracking-widest rounded-lg border border-brand-accent/20"
                   >
                     #{theme}
                   </span>

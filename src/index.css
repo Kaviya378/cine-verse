@@ -7,9 +7,9 @@
     @apply font-sans antialiased overflow-x-hidden;
     background-color: theme('colors.brand.dark');
     background-image:
-      radial-gradient(circle at 10% 10%, rgba(139, 92, 246, 0.06) 0%, transparent 40%),
-      radial-gradient(circle at 90% 90%, rgba(99, 102, 241, 0.04) 0%, transparent 40%),
-      linear-gradient(to bottom, #111827, #161e2e, #1f2937);
+      radial-gradient(circle at 10% 10%, rgba(229, 9, 20, 0.05) 0%, transparent 40%),
+      radial-gradient(circle at 90% 90%, rgba(229, 9, 20, 0.04) 0%, transparent 40%),
+      linear-gradient(to bottom, #000000, #0a0a0a, #141414);
     color: theme('colors.brand.gray');
     min-height: 100vh;
     background-attachment: fixed;
@@ -160,17 +160,17 @@
   }
 }
 
-/* Custom scrollbar adjustments for the dark purple theme */
+/* Custom scrollbar adjustments for the dark red theme */
 ::-webkit-scrollbar-thumb {
-  background: #8B5CF6;
+  background: #E50914;
   border-radius: 4px;
-  border: 2px solid #111827;
+  border: 2px solid #000000;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #6366F1;
+  background: #FF3D47;
 }
 
 ::-webkit-scrollbar-track {
-  background: #111827;
+  background: #050505;
 }

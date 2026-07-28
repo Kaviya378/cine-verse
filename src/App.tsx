@@ -115,8 +115,8 @@ function App() {
           {(hasSubmitted || isGenerating) && (
             <div id="recommendations" className="mt-28">
               <div className="flex flex-col items-center justify-center mb-16 space-y-4">
-                <h2 className="text-sm font-black text-brand-primary text-center tracking-[0.6em] uppercase">CURATED SELECTIONS</h2>
-                <div className="h-0.5 w-32 bg-gradient-to-r from-transparent via-brand-primary to-transparent opacity-50 shadow-cinema animate-pulse"></div>
+                <h2 className="text-sm font-black text-transparent bg-clip-text bg-ai-gradient text-center tracking-[0.6em] uppercase">CURATED SELECTIONS</h2>
+                <div className="h-[2px] w-32 bg-ai-gradient opacity-60 shadow-cinema animate-pulse"></div>
               </div>
 
               {isGenerating ? (
@@ -140,7 +140,7 @@ function App() {
             {/* Category 1: 2026 Latest Blockbusters (OTT Snap Scroll Row) */}
             {trending2026.length > 0 && (
               <div className="space-y-6 mb-20">
-                <h3 className="text-sm font-black text-white tracking-[0.4em] uppercase border-l-2 border-brand-primary pl-4">
+                <h3 className="text-sm font-black text-white tracking-[0.4em] uppercase border-l-2 border-brand-secondary pl-4">
                   🌟 TRENDING 2026 BLOCKBUSTERS
                 </h3>
                 <div className="flex space-x-6 overflow-x-auto pb-6 pt-2 no-scrollbar snap-x snap-mandatory scroll-smooth">
@@ -160,7 +160,7 @@ function App() {
             {/* Category 2: Top Rated Masterpieces (OTT Snap Scroll Row) */}
             {topRated.length > 0 && (
               <div className="space-y-6 mb-24">
-                <h3 className="text-sm font-black text-white tracking-[0.4em] uppercase border-l-2 border-brand-primary pl-4">
+                <h3 className="text-sm font-black text-white tracking-[0.4em] uppercase border-l-2 border-brand-secondary pl-4">
                   🔥 CRITICALLY ACCLAIMED CLASSICS
                 </h3>
                 <div className="flex space-x-6 overflow-x-auto pb-6 pt-2 no-scrollbar snap-x snap-mandatory scroll-smooth">
@@ -193,9 +193,9 @@ function App() {
                     placeholder="Search by title or director..."
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
-                    className="w-full bg-brand-surface/75 border border-white/10 rounded-2xl px-8 py-5 text-white placeholder:text-brand-muted focus:outline-none focus:border-brand-primary/50 transition-all text-xs font-bold tracking-widest uppercase"
+                    className="w-full bg-white/[0.02] backdrop-blur-md border border-white/[0.05] rounded-2xl px-8 py-5 text-white placeholder:text-brand-muted focus:outline-none focus:border-brand-primary/45 focus:shadow-[0_0_30px_rgba(229,9,20,0.15)] transition-all text-xs font-bold tracking-widest uppercase"
                   />
-                  <div className="absolute inset-0 bg-brand-primary/5 blur-xl -z-10 opacity-0 group-focus-within:opacity-100 transition-opacity"></div>
+                  <div className="absolute inset-0 bg-brand-primary/8 blur-xl -z-10 opacity-0 group-focus-within:opacity-100 transition-opacity"></div>
                 </div>
 
                 {/* Genre Pills */}
@@ -205,8 +205,8 @@ function App() {
                       key={genre}
                       onClick={() => setSelectedGenre(genre)}
                       className={`px-5 py-2 rounded-full text-[9px] font-black uppercase tracking-widest transition-all border ${selectedGenre === genre
-                          ? 'bg-brand-primary border-transparent text-white shadow-cinema scale-105'
-                          : 'bg-white/5 border-white/5 text-brand-muted hover:bg-white/10 hover:text-white'
+                          ? 'bg-ai-gradient border-transparent text-white shadow-cinema scale-105'
+                          : 'bg-white/5 border-white/[0.05] text-brand-muted hover:border-brand-primary/30 hover:text-white'
                         }`}
                     >
                       {genre}

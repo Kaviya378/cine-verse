@@ -9,22 +9,28 @@ export default {
       },
       colors: {
         brand: {
-          primary: '#8B5CF6',   // Neon Purple
-          secondary: '#6366F1', // Indigo Secondary
-          accent: '#A78BFA',    // Violet Accent
-          dark: '#111827',      // Background Dark Slate
-          surface: '#1F2937',   // Surface Slate
-          card: '#374151',      // Card Slate
-          light: '#F9FAFB',     // Text
-          gray: '#F9FAFB',      // Text
-          muted: '#D1D5DB',     // Secondary Text
-          subtle: '#374151',    // Dividers/Borders
-          black: '#0B0F17',     // Darker Accent Background
+          primary: '#E50914',   // Cinematic Red
+          secondary: '#B20710', // Darker Red
+          accent: '#FF3D47',    // Lighter Red Highlight
+          dark: '#000000',      // Pure Black Base
+          surface: '#141414',   // Surface Black
+          card: 'rgba(20, 20, 20, 0.8)', // Card backdrop black
+          light: '#FFFFFF',     // Clean White Text
+          gray: '#E5E5E5',      // High-contrast Gray
+          muted: '#808080',     // Muted Gray
+          subtle: '#333333',    // Borders/Dividers
+          black: '#050505',     // True Darker Accent
         }
       },
       boxShadow: {
         'soft': '0 10px 30px -5px rgba(0, 0, 0, 0.5)',
-        'cinema': '0 0 20px rgba(139, 92, 246, 0.35)',
+        'cinema': '0 0 20px rgba(229, 9, 20, 0.35)',
+        'neon-pink': '0 0 20px rgba(229, 9, 20, 0.2)',
+        'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.37)',
+      },
+      backgroundImage: {
+        'ai-gradient': 'linear-gradient(120deg, #FF3D47 0%, #E50914 50%, #B20710 100%)',
+        'ai-radial': 'radial-gradient(circle at center, rgba(229, 9, 20, 0.15) 0%, rgba(178, 7, 16, 0.05) 50%, transparent 100%)',
       },
       animation: {
         'fade-in': 'fadeIn 0.6s ease-out forwards',

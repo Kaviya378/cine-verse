@@ -73,13 +73,13 @@ const MovieCard: React.FC<MovieCardProps> = ({
 
   return (
     <div
-      className={`transform transition-all duration-700 ease-out ${isVisible
+      className={`transform transition-all duration-700 ease-out h-full ${isVisible
         ? 'translate-y-0 opacity-100'
         : 'translate-y-10 opacity-0'
         }`}
     >
       <div
-        className="group relative bg-brand-surface/75 backdrop-blur-md cursor-pointer hover:shadow-[0_20px_50px_rgba(139,92,246,0.25)] border border-white/5 hover:border-brand-primary/40 h-full flex flex-col rounded-[1.8rem] overflow-hidden transform-style-3d hover-glare"
+        className="group relative bg-white/[0.02] backdrop-blur-md cursor-pointer hover:shadow-[0_15px_40px_rgba(229,9,20,0.25)] border border-white/[0.05] hover:border-brand-primary/45 h-full flex flex-col rounded-[1.8rem] overflow-hidden transform-style-3d hover-glare transition-all duration-300"
         style={tiltStyle}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
@@ -87,7 +87,7 @@ const MovieCard: React.FC<MovieCardProps> = ({
         data-movie-id={id}
       >
         {/* Spotlight light follow background on card */}
-        <div className="absolute inset-0 bg-gradient-to-tr from-brand-primary/0 via-brand-primary/5 to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+        <div className="absolute inset-0 bg-gradient-to-tr from-brand-primary/0 via-brand-primary/5 to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
 
         <div className="relative aspect-[2/3] overflow-hidden">
           <img
@@ -96,11 +96,11 @@ const MovieCard: React.FC<MovieCardProps> = ({
             className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
             loading="lazy"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-brand-surface via-transparent to-transparent opacity-90"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/95 via-transparent to-transparent opacity-95"></div>
 
           {/* Top badge match score indicator (no click required) */}
           {reason && (
-            <div className="absolute top-4 left-4 bg-brand-primary/95 text-white font-black text-[9px] tracking-widest px-3 py-1.5 rounded-full shadow-cinema scale-95 group-hover:scale-100 transition-all duration-300">
+            <div className="absolute top-4 left-4 bg-brand-primary/95 text-white font-black text-[9px] tracking-widest px-3 py-1.5 rounded-full shadow-[0_0_15px_rgba(229,9,20,0.45)] scale-95 group-hover:scale-100 transition-all duration-300">
               {reason.matchScore.toFixed(0)}% MATCH
             </div>
           )}
@@ -117,8 +117,8 @@ const MovieCard: React.FC<MovieCardProps> = ({
 
         <div className="p-6 flex flex-col flex-grow space-y-6">
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-2 bg-brand-primary/10 px-3 py-1.5 rounded-full text-brand-primary border border-brand-primary/20">
-              <Star className="fill-brand-primary" size={12} />
+            <div className="flex items-center space-x-2 bg-brand-primary/10 px-3 py-1.5 rounded-full text-brand-accent border border-brand-primary/20">
+              <Star className="fill-brand-accent text-brand-accent" size={12} />
               <span className="font-black text-[10px] tracking-widest">{rating.toFixed(1)}</span>
             </div>
             <div className="flex items-center text-brand-muted text-[10px] font-black uppercase tracking-[0.2em]">

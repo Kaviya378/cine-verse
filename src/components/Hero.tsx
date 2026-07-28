@@ -28,11 +28,11 @@ const Hero: React.FC = () => {
         {/* Layer 1: Semi-transparent Black Overlay (Netflix-style dark mask) */}
         <div className="absolute inset-0 bg-black/60 z-10"></div>
         
-        {/* Layer 2: Soft Crimson Radial Glow centered at the bottom-left of the viewport */}
+        {/* Layer 2: Soft Cosmic Radial Glow centered at the bottom-left of the viewport */}
         <div 
           className="absolute inset-0 z-15 opacity-80"
           style={{
-            background: 'radial-gradient(circle at 15% 85%, rgba(139, 92, 246, 0.35) 0%, transparent 60%)'
+            background: 'radial-gradient(circle at 15% 85%, rgba(229, 9, 20, 0.25) 0%, rgba(178, 7, 16, 0.15) 40%, rgba(255, 61, 71, 0.05) 70%, transparent 100%)'
           }}
         ></div>
 
@@ -41,7 +41,7 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Cinematic Ambient Lighting Blob */}
-      <div className="absolute bottom-1/4 -right-20 w-[500px] h-[500px] bg-brand-primary/10 blur-[150px] rounded-full z-10 pointer-events-none"></div>
+      <div className="absolute bottom-1/4 -right-20 w-[500px] h-[500px] bg-brand-secondary/10 blur-[150px] rounded-full z-10 pointer-events-none"></div>
 
       {/* Hero Content Area */}
       <div className="container mx-auto px-6 relative z-30 text-center -mt-16">
@@ -52,12 +52,19 @@ const Hero: React.FC = () => {
             className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black font-heading leading-[0.85] tracking-tighter text-white opacity-0 animate-slide-up"
             style={{ 
               animationDelay: '150ms', 
-              animationFillMode: 'forwards',
-              textShadow: '0 4px 20px rgba(0, 0, 0, 0.95), 0 0 40px rgba(0, 0, 0, 0.5)'
+              animationFillMode: 'forwards'
             }}
           >
-            ULTIMATE <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-brand-accent drop-shadow-3xl">
+            <span style={{ textShadow: '0 4px 20px rgba(0, 0, 0, 0.95), 0 0 40px rgba(0, 0, 0, 0.5)' }}>
+              ULTIMATE
+            </span>
+            <br />
+            <span 
+              className="text-brand-primary drop-shadow-[0_0_30px_rgba(229,9,20,0.6)]"
+              style={{
+                textShadow: '0 4px 20px rgba(0, 0, 0, 0.95)'
+              }}
+            >
               CINE VERSE
             </span>
           </h1>
@@ -84,7 +91,7 @@ const Hero: React.FC = () => {
           >
             <button
               onClick={scrollToPreferences}
-              className="group relative px-12 py-5 bg-brand-primary hover:bg-brand-secondary text-white rounded-full font-black uppercase tracking-widest transition-all duration-500 shadow-[0_0_40px_rgba(139,92,246,0.4)] hover:shadow-[0_0_60px_rgba(99,102,241,0.6)] transform hover:-translate-y-1 flex items-center justify-center gap-4 overflow-hidden"
+              className="group relative px-12 py-5 bg-ai-gradient text-white rounded-full font-black uppercase tracking-widest transition-all duration-500 shadow-cinema hover:shadow-[0_0_50px_rgba(229,9,20,0.6)] transform hover:-translate-y-1 flex items-center justify-center gap-4 overflow-hidden"
             >
               <span className="relative z-10 flex items-center gap-3">
                 <Play size={20} fill="currentColor" />
